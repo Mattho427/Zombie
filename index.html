@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dead Zone – Zombie Survival</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="hud" class="hidden">
+    <div class="hud-left">
+      <div class="bar"><span class="label">HP</span><div class="track"><div id="hp-fill" class="fill hp"></div></div></div>
+      <div class="bar"><span class="label">STA</span><div class="track"><div id="sta-fill" class="fill sta"></div></div></div>
+      <div id="weapon-info"></div>
+    </div>
+    <div class="hud-right">
+      <div id="wave-info"></div>
+      <div id="score-info"></div>
+      <div id="time-info"></div>
+    </div>
+    <div id="message"></div>
+  </div>
+
+  <div id="menu" class="overlay">
+    <div class="panel">
+      <h1>DEAD ZONE</h1>
+      <p class="subtitle">Überlebe die Zombie-Apokalypse</p>
+      <button id="btn-start">Spiel starten</button>
+      <div class="controls">
+        <h2>Steuerung</h2>
+        <ul>
+          <li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Bewegen</li>
+          <li><kbd>Maus</kbd> Zielen &amp; Schießen</li>
+          <li><kbd>Shift</kbd> Sprinten</li>
+          <li><kbd>R</kbd> Nachladen</li>
+          <li><kbd>1</kbd>–<kbd>4</kbd> / <kbd>Mausrad</kbd> Waffe wechseln</li>
+          <li><kbd>E</kbd> Barrikade bauen (3 Schrott)</li>
+          <li><kbd>P</kbd> / <kbd>Esc</kbd> Pause &nbsp; <kbd>M</kbd> Ton an/aus</li>
+        </ul>
+      </div>
+      <p id="highscore"></p>
+    </div>
+  </div>
+
+  <div id="pause" class="overlay hidden">
+    <div class="panel">
+      <h1>PAUSE</h1>
+      <button id="btn-resume">Weiter</button>
+      <button id="btn-quit" class="secondary">Hauptmenü</button>
+    </div>
+  </div>
+
+  <div id="perks" class="overlay hidden">
+    <div class="panel">
+      <h1 id="perk-title">WELLE ÜBERSTANDEN</h1>
+      <p class="subtitle">Wähle eine Verbesserung</p>
+      <div id="perk-list"></div>
+    </div>
+  </div>
+
+  <div id="gameover" class="overlay hidden">
+    <div class="panel">
+      <h1 class="red">DU BIST TOT</h1>
+      <div id="final-stats"></div>
+      <button id="btn-restart">Nochmal versuchen</button>
+      <button id="btn-menu" class="secondary">Hauptmenü</button>
+    </div>
+  </div>
+
+  <div id="touch-controls" class="hidden">
+    <div id="stick-move" class="stick"><div class="knob"></div></div>
+    <div id="stick-aim" class="stick"><div class="knob"></div></div>
+    <button id="touch-reload" class="touch-btn">R</button>
+    <button id="touch-build" class="touch-btn">E</button>
+    <button id="touch-swap" class="touch-btn">⇄</button>
+  </div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/weapons.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/entities.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/director.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
